@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Design - Easy Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="music-plyer">
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle"></div>
+                <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <img src="media/thumbnail.png" class="song-img">
+            <h1>ishq</h1>
+            <p>manish kumar mmk</p>
+            <audio id="song">
+                <source src="media/Ishq Official Lyrical Video I @TheAmer311 I@theimaginarypoet I@rauhanmalik I Love Song 2024.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range " value="0" id="progress">
+            <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playpause()"><i class="fa-regular fa-circle-play" id="ctrIcon"></i></div>
+                <div><i class="fa-solid fa-hand-point-right"></i></div>
+            </div>
+
+
+
+        </div>
+    </div>   
+    <script>
+
+let progress = document.getElementById("progress");
+let song = document.getElementById("song");
+let ctrIcon = document.getElementById("ctrIcon");
+song.onloadedmetadata = Function(){
+    progress.max = song.duration;
+    progress.value = song.currentTime;
+
+}
+function playpause(){
+    if(ctrIcon.classlist.contain("fa-pause")){
+        somng.pause();
+        ctrIcon.classlist.remove("fa-pause")
+        ctrIcon.classlist.add("fa-play")
+        
+    }
+    else{
+        song.play();
+        ctrIcon.classlist.add("fa-pause")
+        ctrIcon.classlist.remove("fa-play")
+    }
+}
+
+if(song.play()){
+setInterval(()=>{
+    progress.value =song.currenttime;
+},500);
+
+
+
+}
+progress.onchange = function(){
+    song.play();
+    song.currentTime = progress.value;
+    trIcon.classlist.add("fa-pause")
+        ctrIcon.classlist.remove("fa-play")
+}
+
+    </script>   
+</body>
+</html>
